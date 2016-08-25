@@ -1,15 +1,17 @@
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
-set(CMAKE_SYSROOT /home/devel/rasp-pi-rootfs)
-set(CMAKE_STAGING_PREFIX /home/devel/stage)
-
-set(tools /home/devel/gcc-4.7-linaro-rpi-gnueabihf)
-set(CMAKE_C_COMPILER ${tools}/bin/arm-linux-gnueabihf-gcc)
-set(CMAKE_CXX_COMPILER ${tools}/bin/arm-linux-gnueabihf-g++)
+set(tools /Users/alvaro/gcc-arm-none-eabi-5_4-2016q2)
+set(CMAKE_C_COMPILER ${tools}/bin/arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER ${tools}/bin/arm-none-eabi-g++)
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
+SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")
+SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC --specs=nosys.specs" )
